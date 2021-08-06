@@ -1,6 +1,6 @@
 //---- Setup http server, express and socket.io
 
-console.log("running!");
+console.log("running great!");
 
 // const express = require('express');
 // const app = express();
