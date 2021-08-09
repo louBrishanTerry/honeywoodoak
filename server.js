@@ -20,27 +20,27 @@ io.on('connection', (socket) => {
   
   socket.on('LDR', function(data) {
     console.log('LDR = ', data);
-    //io.emit('LDR/', data);
+    io.emit('LDR/', data);
    });
   
   socket.on('red', function(data) {
     console.log('Red = ', data);
-    //io.emit('Red/', data);
+    io.emit('Red/', data);
    });
   
   socket.on('gre', function(data) {
     console.log('Green = ', data);
-    //io.emit('Gre/', data);
+    io.emit('Gre/', data);
    });
   
   socket.on('blu', function(data) {
     console.log('Blue = ', data);
-    //io.emit('Blu/', data);
+    io.emit('Blu/', data);
    });
   
   socket.on('fun', function(data) {
     console.log('Fungi = ', data);
-    //io.emit('Fun/', data);
+    io.emit('Fun/', data);
    });
   
   socket.on('disconnect', function() {
