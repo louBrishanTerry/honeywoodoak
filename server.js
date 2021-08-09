@@ -15,47 +15,32 @@ console.log(`Listening for socket connections on port ${port}`);
 
 //---- Real time stuff with socket.io
 
-let bgAllValues = [];
-let bgVal = 0; 
-
-function updateBgVal(_data) {
-  bgAllValues.push(_data);  
-}
-
-setInterval( () => {
-  bgAllValues.forEach( e => bgVal += e);
-  bgVal = bgVal / bgAllValues.length;
-  io.emit('background', bgVal);
-  bgAllValues = [];
-  bgVal = 0; 
-}, 500);
-
 io.on('connection', (socket) => {
   console.log("New client: " + socket.id);
   
   socket.on('LDR', function(data) {
     console.log('LDR = ', data);
-    io.emit('LDR/', data);
+    //io.emit('LDR/', data);
    });
   
   socket.on('red', function(data) {
     console.log('Red = ', data);
-    io.emit('Rfreq/', data);
+    //io.emit('Red/', data);
    });
   
   socket.on('gre', function(data) {
     console.log('Green = ', data);
-    io.emit('Gfreq/', data);
+    //io.emit('Gre/', data);
    });
   
   socket.on('blu', function(data) {
     console.log('Blue = ', data);
-    io.emit('Bfreq/', data);
+    //io.emit('Blu/', data);
    });
   
   socket.on('fun', function(data) {
     console.log('Fungi = ', data);
-    io.emit('Fungi/', data);
+    //io.emit('Fun/', data);
    });
   
   socket.on('disconnect', function() {
